@@ -3,7 +3,6 @@ import {
   FormControl,
   IconButton,
   InputBase,
-  Menu,
   MenuItem,
   Select,
   Typography,
@@ -21,6 +20,7 @@ import {
   LightMode,
   Message,
   Notifications,
+  Menu,
   Search,
 } from "@mui/icons-material";
 import { setMode, setLogout } from "../../state";
@@ -123,7 +123,7 @@ const Navbar = () => {
           position={"fixed"}
           right={"0"}
           bottom={"0"}
-          height={"100$"}
+          height={"100%"}
           zIndex={"10"}
           maxWidth="500px"
           minWidth="300px"
