@@ -7,7 +7,7 @@ import WidgetWrapper from "../../components/WidgetWrapper";
 import Friend from "../../components/Friend";
 import FlexBetween from "../../components/FlexBetween";
 import {
-  ChatBubbleOutline,
+  
   ChatBubbleOutlined,
   FavoriteOutlined,
   ShareOutlined,
@@ -37,7 +37,7 @@ const PostWidget = ({
   const primary = palette.primary;
 
   const pathLike = async () => {
-    const response = fetch(`http://localhost:3001/posts/${postId}/like`, {
+    const response = await fetch(`http://localhost:3001/posts/${postId}/like`, {
       method: "PATCH",
       headers: {
         Authorization: `Bearer ${token}`,
@@ -45,6 +45,7 @@ const PostWidget = ({
       },
       body: JSON.stringify({ userId: loggeInUserId }),
     });
+    
     const updatePost = await response.json();
     dispatch(setPost({ post: updatePost }));
   };
@@ -81,7 +82,7 @@ const PostWidget = ({
               {isLinked ? (
                 <FavoriteOutlined sx={{ color: primary }} />
               ) : (
-                <FavoriteOutlined />
+                <FavoriteOutlined  />
               )}
             </IconButton>
             <Typography>{likeCount}</Typography>
